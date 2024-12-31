@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "dd2ab14ff9453e5e03ae279fb8f31b3c"
+application_url = "https://desired-concert-rocks-anime.trycloudflare.com"
+embedded = true
+name = "Tradie-live"
+handle = "tradie-live"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://desired-concert-rocks-anime.trycloudflare.com/auth/callback",
+  "https://desired-concert-rocks-anime.trycloudflare.com/auth/shopify/callback",
+  "https://desired-concert-rocks-anime.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "ratul-practices.myshopify.com"
+automatically_update_urls_on_dev = true
